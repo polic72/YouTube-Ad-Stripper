@@ -5,12 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YouTube_Ad_Stripper"
         mc:Ignorable="d"
-        Title="YouTube Ad Stripper" Height="300" Width="500" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Icon="Resources/youtube_ad_stripper.ico">
+        Title="YouTube Ad Stripper" Height="350" Width="500" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Icon="Resources/youtube_ad_stripper.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        
+
+
+        <TextBlock Text="Please paste debug info here:" Margin="4" FontWeight="Bold" VerticalAlignment="Center"/>
+
+        <TextBox Name="debug_textBox" Grid.Row="1" Margin="4"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Button Name="settings_button" Height="25" Width="25" Margin="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="settings_button_Click">
+                <Image Source="Resources\gear.png"/>
+            </Button>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Button Name="enter_button" Content="OK" Height="25" Width="75" Margin="4" IsDefault="True" Click="enter_button_Click"/>
+                <Button Name="cancel_button" Content="Cancel" Height="25" Width="75" Margin="4" IsCancel="True" Click="cancel_button_Click"/>
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </Window>
