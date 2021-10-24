@@ -47,6 +47,9 @@ namespace YouTube_Ad_Stripper
 
         private void enter_button_Click(object sender, RoutedEventArgs e)
         {
+            DebugText = debug_textBox.Text;
+
+
             WasCancelled = false;
 
             Close();
@@ -65,7 +68,11 @@ namespace YouTube_Ad_Stripper
 
         private void settings_button_Click(object sender, RoutedEventArgs e)
         {
+            //Settings_Window window = new Settings_Window();
+            //window.ShowDialog();
 
+
+            MessageBox.Show("Not a thing right now.", "I'll get to it.", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
         }
     }
 }

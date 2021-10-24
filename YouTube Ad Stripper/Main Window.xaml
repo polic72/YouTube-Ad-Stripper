@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YouTube_Ad_Stripper"
         mc:Ignorable="d"
-        Title="YouTube Ad Stripper" Height="350" Width="500" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Icon="Resources/youtube_ad_stripper.ico">
+        Title="YouTube Ad Stripper" Height="350" Width="500" MinHeight="350" MinWidth="500"
+        SizeToContent="WidthAndHeight" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Icon="Resources/youtube_ad_stripper.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -16,7 +19,10 @@
 
         <TextBlock Text="Please paste debug info here:" Margin="4" FontWeight="Bold" VerticalAlignment="Center"/>
 
-        <TextBox Name="debug_textBox" Grid.Row="1" Margin="4"/>
+        <Border Name="border" Grid.Row="1" Margin="4"/>
+        <TextBox Name="debug_textBox" Grid.Row="1" Margin="4"
+                 Height="{Binding Path=ActualHeight, ElementName=border}" Width="{Binding Path=ActualWidth, ElementName=border}"
+                 TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
